@@ -38,9 +38,18 @@ metadata:
   name: html-content-{{ .Values.environment }}
 data:
   index.html: |
-    <html>
-    <body>
-      <h1>Environment: ${ENVIRONMENT}</h1>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environment Display</title>
+</head>
+<body>
+  <h1>Environment: <span id="environment"></span></h1>
+  <script>
+    document.getElementById("environment").innerText = process.env.ENVIRONMENT || 'Unknown';
+  </script>
+</body>
+</html>
 
