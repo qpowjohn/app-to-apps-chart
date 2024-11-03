@@ -1,0 +1,6 @@
+apiVersion: v2
+name: app-to-apps-chart
+description: A Helm chart for testing ArgoCD App of Apps pattern
+version: 0.1.0
+appVersion: "1.0"
+
