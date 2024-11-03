@@ -22,7 +22,7 @@ spec:
         - name: ENVIRONMENT
           valueFrom:
             secretKeyRef:
-              name: environment-secret
+              name: {{ .Release.Name }}
               key: ENVIRONMENT
         volumeMounts:
         - name: html
