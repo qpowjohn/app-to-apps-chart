@@ -30,12 +30,12 @@ spec:
       volumes:
       - name: html
         configMap:
-          name: html-content
+          name: html-content-{{ .Values.environment }}
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: html-content
+  name: html-content-{{ .Values.environment }}
 data:
   index.html: |
     <html>
