@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: 'https://github.com/qpowjohn/app-to-apps-chart'
+    targetRevision: main
+    path: app-to-apps-chart
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
